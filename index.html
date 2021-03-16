@@ -1,0 +1,227 @@
+<!--
+  * @author Abhay Sardhara
+  * @email <abhaysardhara7675@gmail.com>
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Draw Anything</title>
+    <style type="text/css">
+      body {
+        padding: 0px 10px;
+        white-space: nowrap;
+        font-family: Verdana,sans-serif;
+        background-color: #4DB2B2;
+        
+        color:white;
+      }
+
+      h1 {
+        font-weight: 100;
+        text-align: center;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        z-index: 2;
+      }
+
+      div{
+        text-align: center;
+      }
+
+      .sign{
+        position: absolute;
+        left: 44%;
+        top:5%;
+        z-index: -1;
+        width:30px;
+        animation: zoom 2s;
+      }
+      @keyframes zoom{
+        from{width:60px;top:0%;z-index: 0}
+      }
+      input {
+        display: none;
+      }
+
+      .button {
+        display: inline-block;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+        cursor: pointer;
+
+      }
+      .button span {
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        border-radius: 100%;
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background: #eeeeee;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: ease .3s;
+      }
+
+      .button span:hover {
+        padding: 10px;
+      }
+
+      .black .button span {
+        background: black;
+      }
+
+      .white .button span {
+        background: #ffffff;
+      }
+
+      .orange .button span {
+        background: #FF5722;
+      }
+
+      .amber .button span {
+        background: #FFC107;
+      }
+
+      .lime .button span {
+        background: #8BC34A;
+      }
+
+      .teal .button span {
+        background: #009688;
+      }
+
+      .blue .button span {
+        background: #2196F3;
+      }
+
+      .indigo .button span {
+        background: #3F51B5;
+      }
+
+      .layer {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparent;
+        /* transition: ease .3s; */
+        z-index: -1;
+      }
+
+      .orange input:checked ~ .layer {
+        background: #F4511E;
+      }
+
+      .amber input:checked ~ .layer {
+        background: #FFB300;
+      }
+
+      .lime input:checked ~ .layer {
+        background: #7CB342;
+      }
+
+      .teal input:checked ~ .layer {
+        background: #00897B;
+      }
+
+      .blue input:checked ~ .layer {
+        background: #1E88E5;
+      }
+
+      .indigo input:checked ~ .layer {
+        background: #3949AB;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="logo.png" class="sign">
+    <h1>Draw Anything</h1>
+    <hr style="height: 5px; background-color: black;"><br>
+    <div>
+      <label>Enable/Disable the drawing</label>
+      <button id="toggle" style="background-color: #4CAF50;">Enable</button>
+      <br><br><hr><br><br>
+      <label>Line width : </label><select id="setWidth">
+          <option value="1">1</option>
+          <option value="2" selected="selected">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+      </select> 
+      <br><br><hr><br><br>
+      <button id="undo" style="margin-left: 10px;">Undo</button>
+      <button id="redo" style="margin-left: 2px;">Redo</button>
+      <button id="clear" style="margin-left: 60px;">Clear</button>
+      <br><br><hr><br><br>
+      <div>
+        <label for="color" style="float: left;">Color</label><br>
+
+        <label class="black">
+          <input type="radio" name="color" value="black" id="black">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+
+        <label class="white">
+          <input type="radio" name="color" value="white" id="white">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+
+        <label class="orange">
+          <input type="radio" name="color" value="orange" id="orange">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+        
+        <label class="amber">
+          <input type="radio" name="color" value="amber" id="amber">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+        
+        <label class="lime">
+          <input type="radio" name="color" value="lime" id="lime">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+        
+        <label class="teal">
+          <input type="radio" name="color" value="teal" id="teal">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+        
+        <label class="blue">
+          <input type="radio" name="color" value="blue" id="blue">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+        
+        <label class="indigo">
+          <input type="radio" name="color" value="indigo" id="indigo">
+          <div class="layer"></div>
+          <div class="button"><span></span></div>
+        </label>
+      </div>
+      <script src="popup.js"></script>
+    </div>
+  </body>
+</html>
