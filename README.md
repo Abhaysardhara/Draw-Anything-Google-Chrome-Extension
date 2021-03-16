@@ -1,6 +1,6 @@
 # Draw-Anything
 
-<img src="https://github.com/Abhaysardhara/Draw-Anything/blob/main/logo.png" width="70" height="70" />
+<img src="https://github.com/Abhaysardhara/Draw-Anything-Google-Chrome-Extension/blob/main/logo.png" width="70" height="70" />
 
 [![version](https://img.shields.io/badge/version-1.1-yellow.svg)](https://github.com/Abhaysardhara/Draw-Anything-Google-Chrome-Extension/releases/tag/v1.0)
 
